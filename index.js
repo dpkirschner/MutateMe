@@ -13,8 +13,6 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/mutation/trump', function(request, response) {
-	console.log(Object.keys(jayz.library).length);
-	console.log(Object.keys(trump.library).length);
   	response.render('pages/mutation',
   		{
   			text: trump.generate(100),
