@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../sections/header.ejs %>
+  <% include ../partials/header.ejs %>
 </head>
 
 <body>
 
-	<% include ../sections/nav.ejs %>
+	<% include ../partials/nav.ejs %>
 
 	<div class="jumbotron text-center">
 	  <div class="container">
 	    <h1>Getting Started with Mutate Me</h1>
 	    <p>This is a small application designed to mutate text based on some input. Look at some of the sample texts below, or generate your own!</p>
-	    <a type="button" class="btn btn-lg btn-default" href="mutations/JayZ"><span class="glyphicon glyphicon-flash"></span> JayZ</a>
+	    <a type="button" class="btn btn-lg btn-default" href="/mutation/jayz"><span class="glyphicon glyphicon-flash"></span> JayZ</a>
+	    <a type="button" class="btn btn-lg btn-default" href="/mutation/trump"><span class="glyphicon glyphicon-flash"></span> Trump</a>
 	  </div>
 	</div>
+
+	<% include ../partials/footer.ejs %>
 
 </body>
 </html>
