@@ -3,6 +3,14 @@ var app = express();
 
 var jayz = require('./generator/jayz');
 var trump = require('./generator/trump');
+var TextMutator = require('textMutator');
+
+var bodyParser = require('body-parser')
+
+app.use( bodyParser.json() );
+app.use(bodyParser.urlencoded({
+  extended: true
+})); 
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -28,6 +36,29 @@ app.get('/mutation/jayz', function(request, response) {
   			artist: "JayZ"
   		}
   	);
+});
+
+app.get('/mutation/generic', function(request, response) {
+    response.render('pages/generic');
+});
+
+app.post('/mutation/generic', function(request, response) {
+    var text = request.body.inputText;
+
+    if(!text || (text.match(/\s/g) || []).length <= 10) {
+      response.render('pages/mutation', {
+        error: "We need a longer sample of text to get an output. Try using a speech or lyrics to your favorite song!"
+      });
+      return;
+    }
+
+    var markov = new TextMutator(2);
+    markov.ingest(text);
+    response.render('pages/mutation', {
+        error: false,
+        text: markov.generate(100),
+        artist: "In your personal style:"
+    });
 });
 
 app.get('/', function(request, response) {

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+	<% include ../partials/nav.ejs %>
+	<div class="container">
+    	<h2>In your own words:</h2>
+    	<form action="/mutation/generic" id="textForm" method="POST" onsubmit="return validateForm()">
+		  	<textarea rows="10" cols="100" id="inputText" name="inputText" placeholder="Enter text here..."></textarea>
+		  	</br>
+		  	<div><input type="submit"><div class="errorText" id="errorDiv"/></div>
+		</form>
+	    
+	</div>
+
+	<% include ../partials/footer.ejs %>
+
+
+	<script>
+	function validateForm() {
+		var error;
+	    // Get the value of the input field with id="numb"
+	    var text = document.getElementById("inputText").value;
+
+	    if (!text || (text.match(/\s/g) || []).length <= 10) {
+	        error = "We need a longer sample of text to get an output. Try using a speech or lyrics to your favorite song!";
+	    }
+
+	    if(error) {
+	    	document.getElementById("errorDiv").innerHTML = error;
+	    	return false;
+	    }
+
+	    return true;
+	}
+	</script>
+</body>
+</html>

@@ -10,8 +10,13 @@
 
 	<div class="jumbotron text-center">
 	  <div class="container">
-	    <h2>In the style of: <%= artist %></h2>
-	    <p><%= text %></p>
+	  	<% if(error){ %>
+			<h2>Error:</h2>
+			<p><%= error %></p>
+		<% } else{ %>  
+			<h2><%= artist %></h2>
+	    	<p><%= text %></p>
+		<% } %>
 	  </div>
 	</div>
 
