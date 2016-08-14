@@ -12,7 +12,7 @@
     "body-parser": "^1.15.2",
     "ejs": "2.4.1",
     "express": "4.13.3",
-    "textmutator": "1.0.2"
+    "textmutator": ">=1.0.2"
   },
   "engines": {
     "node": "4.4.7"
