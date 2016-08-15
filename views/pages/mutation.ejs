@@ -8,14 +8,17 @@
 
 	<% include ../partials/nav.ejs %>
 
-	<div class="jumbotron text-center">
-	  <div class="container">
+	<div class="container">
+	  <div class="jumbotron">
 	  	<% if(locals.error){ %>
 			<h2>Error:</h2>
 			<p><%= error %></p>
-		<% } else{ %>  
+		<% } else{ %>
 			<h2><%= artist %></h2>
 	    	<p><%= text %></p>
+	    	</br>
+	    	<a href=""><button type="button" class="btn btn-default">Generate another!</button></a>
+	    	<a href="/mutation/generic"><button type="button" class="btn btn-default">Try your own!</button></a>
 		<% } %>
 	  </div>
 	</div>

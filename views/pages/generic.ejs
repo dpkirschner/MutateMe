@@ -7,12 +7,14 @@
 <body>
 
 	<% include ../partials/nav.ejs %>
-	<div class="container">
+
+	<div class="container text-center">
     	<h2>In your own words:</h2>
     	<form action="/mutation/generic" id="textForm" method="POST" onsubmit="return validateForm()">
 		  	<textarea rows="10" cols="100" id="inputText" name="inputText" placeholder="Enter text here..."></textarea>
 		  	</br>
-		  	<div><input type="submit"><div class="errorText" id="errorDiv"/></div>
+		  	<button type="submit" class="btn btn-default">Submit</button>
+		  	<div class="errorText" id="errorDiv"/></div>
 		</form>
 	    
 	</div>

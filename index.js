@@ -7,6 +7,8 @@ var TextMutator = require('textmutator');
 
 var bodyParser = require('body-parser')
 
+const artistPrefix = "In the style of: ";
+
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({
   extended: true
@@ -24,7 +26,8 @@ app.get('/mutation/trump', function(request, response) {
   	response.render('pages/mutation',
   		{
   			text: trump.generate(100),
-  			artist: "Trump"
+        prefix: artistPrefix,
+  			artist: "Trump",
   		}
   	);
 });
@@ -33,7 +36,8 @@ app.get('/mutation/jayz', function(request, response) {
   	response.render('pages/mutation',
   		{
   			text: jayz.generate(100),
-  			artist: "JayZ"
+        prefix: artistPrefix,
+  			artist: "JayZ",
   		}
   	);
 });
@@ -57,7 +61,8 @@ app.post('/mutation/generic', function(request, response) {
     response.render('pages/mutation', {
         error: false,
         text: markov.generate(100),
-        artist: "In your personal style:"
+        prefix: artistPrefix,
+        artist: "You",
     });
 });
 
