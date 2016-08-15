@@ -3,7 +3,7 @@ var app = express();
 
 var jayz = require('./generator/jayz');
 var trump = require('./generator/trump');
-var TextMutator = require('textMutator');
+var TextMutator = require('textmutator');
 
 var bodyParser = require('body-parser')
 
