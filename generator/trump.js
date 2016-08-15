@@ -1,4 +1,4 @@
-var TextMutator = require('textMutator');
+var TextMutator = require('textmutator');
 
 var economics = require('../source/trump/economics');
 var foreignPolicy = require('../source/trump/foreignPolicy');

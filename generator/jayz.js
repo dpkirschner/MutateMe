@@ -1,4 +1,4 @@
-var TextMutator = require('textMutator');
+var TextMutator = require('textmutator');
 
 var CantKnockTheHustle = require('../source/jayz/CantKnockTheHustle');
 var DirtOffYourShoulder = require('../source/jayz/DirtOffYourShoulder');
